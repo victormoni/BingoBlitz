@@ -4,7 +4,7 @@ import styles from './NumberPicker.module.css';
 type BingoColumn = 'B' | 'I' | 'N' | 'G' | 'O';
 
 export function NumberPicker() {
-  const [number, setNumber] = useState<number | null>(null); 
+  const [number, setNumber] = useState<number | null>(null);
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const [drawnNumbers, setDrawnNumbers] = useState<{
     B: number[];
@@ -39,10 +39,10 @@ export function NumberPicker() {
     setIsSpinning(true);
 
     setTimeout(() => {
-      let sortedNumber = Math.floor(Math.random() * 75) + 1; 
+      let sortedNumber = Math.floor(Math.random() * 75) + 1;
 
       while (Object.values(drawnNumbers).flat().includes(sortedNumber)) {
-        sortedNumber = Math.floor(Math.random() * 75) + 1; 
+        sortedNumber = Math.floor(Math.random() * 75) + 1;
       }
 
       const letra: BingoColumn = getLetterForNumber(sortedNumber);
@@ -56,20 +56,37 @@ export function NumberPicker() {
     }, 1000);
   };
 
+  const resetGame = () => {
+    setNumber(null);
+    setIsSpinning(false);
+    setDrawnNumbers({
+      B: [],
+      I: [],
+      N: [],
+      G: [],
+      O: [],
+    });
+  };
+
   return (
     <div className={styles.container}>
       <button onClick={sortNumber} className={styles.button}>
         Sortear Número
       </button>
 
+      {/* Botão de Resetar Jogo */}
+      <button onClick={resetGame} className={styles.resetButton}>
+        Resetar Jogo
+      </button>
+
       {/* Animação da roleta */}
       <div className={`${styles.roulette} ${isSpinning ? styles.spinning : ''}`}>
         {/* Bola preta onde o número será exibido */}
-        <div className={styles.blackBall}>
+        <div className={styles.innerBall}>
           <div className={styles.numberDisplay}>
             {/* Exibe a letra acima e o número abaixo */}
             {isSpinning ? (
-              <span className={styles.questionMark}>?</span>
+              <span className={styles.questionMark}></span>
             ) : (
               <>
                 <div className={styles.letter}>{getLetterForNumber(number!)}</div>

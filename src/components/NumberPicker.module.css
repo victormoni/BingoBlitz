@@ -2,12 +2,13 @@
   text-align: center;
   margin-top: 3.125rem;
   padding: 1.25rem 1.25rem;
+  position: relative;
 }
 
 .button {
   padding: 0.625rem 1.25rem;
   font-size: 1rem;
-  background-color: #4caf50;
+  background-color: #007bff;
   color: #f8f8f8;
   border: none;
   border-radius: 0.3125rem;
@@ -15,7 +16,7 @@
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #0059FF;
 }
 
 .roulette {
@@ -27,30 +28,17 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #ffcc00;
-  border: 0.3125rem solid #333;
+  background-color: #333;
+  border: 0.09rem solid #007bff;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease-out;
 }
 
-.spinning {
-  animation: spin 1s linear;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(1440deg);
-  }
-}
-
-.blackBall {
-  width: 8.75rem;
-  height: 8.75rem;
+.innerBall {
+  width: 7rem;
+  height: 7rem;
   border-radius: 50%;
-  background-color: #333;
+  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +49,7 @@
 
 .numberDisplay {
   text-align: center;
-  color: #f8f8f8;
+  color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,21 +60,50 @@
   font-size: 1.875rem;
   font-weight: bold;
   margin-bottom: 0.3125rem;
+  color: #333;
 }
 
 .number {
   font-size: 2.5rem;
   font-weight: bold;
+  color: #333;
 }
 
 .questionMark {
-  font-size: 3.125rem;
+  display: inline-block;
+  transform: translateZ(1px);
 }
+.questionMark:after {
+  content: '';
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #333;
+  animation: coin-flip 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes coin-flip {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
 
 .number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #f8f8f8;
+  color: #333;
 }
 
 .table {
@@ -109,7 +126,7 @@ th, td {
 }
 
 th {
-  background-color: #4caf50;
+  background-color: #007bff;
   color: #f8f8f8;
 }
 
@@ -120,4 +137,21 @@ td {
 
 td:first-child, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:last-child {
   font-weight: bold;
+}
+
+.resetButton {
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  background-color: #ff7f00;
+  color: #f8f8f8;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.resetButton:hover {
+  background-color: #ff7f00;
 }
