@@ -20,6 +20,9 @@ export function NumberPicker() {
     O: [],
   });
 
+  // Adicionando estado para os últimos 10 números sorteados
+  const [lastDrawnNumbers, setLastDrawnNumbers] = useState<number[]>([]);
+
   const getLetterForNumber = (num: number): BingoColumn => {
     if (num >= 1 && num <= 15) return 'B';
     if (num >= 16 && num <= 30) return 'I';
@@ -46,10 +49,20 @@ export function NumberPicker() {
       }
 
       const letra: BingoColumn = getLetterForNumber(sortedNumber);
+
       setDrawnNumbers(prevNumbers => ({
         ...prevNumbers,
         [letra]: [...prevNumbers[letra], sortedNumber],
       }));
+
+      // Atualizando os últimos 10 números sorteados
+      setLastDrawnNumbers(prev => {
+        const newNumbers = [sortedNumber, ...prev];
+        if (newNumbers.length > 10) {
+          newNumbers.pop(); // Mantém apenas os últimos 10 números
+        }
+        return newNumbers;
+      });
 
       setNumber(sortedNumber);
       setIsSpinning(false);
@@ -66,6 +79,7 @@ export function NumberPicker() {
       G: [],
       O: [],
     });
+    setLastDrawnNumbers([]); // Limpar os últimos números sorteados
   };
 
   return (
@@ -74,11 +88,10 @@ export function NumberPicker() {
       <button onClick={resetGame} className={styles.resetButton}>
         Resetar Jogo
       </button>
-      
+
       <button onClick={sortNumber} className={styles.button}>
         Sortear Número
       </button>
-
 
       {/* Animação da roleta */}
       <div className={`${styles.roulette} ${isSpinning ? styles.spinning : ''}`}>
@@ -140,6 +153,19 @@ export function NumberPicker() {
             </tr>
           </tbody>
         </table>
+      </div>
+
+      {/* Tabela para exibir os últimos 10 números sorteados em uma única linha */}
+      <div className={styles.lastNumbersTable}>
+        {/* Exibe o título somente se houver números sorteados */}
+        {lastDrawnNumbers.length > 0 && (
+          <h3>Últimos Números Sorteados</h3>
+        )}
+        <div className={styles.lastNumbersRow}>
+          {lastDrawnNumbers.map((num, index) => (
+            <div key={index} className={styles.lastNumber}>{num}</div>
+          ))}
+        </div>
       </div>
     </div>
   );
