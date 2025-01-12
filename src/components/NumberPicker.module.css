@@ -1,13 +1,14 @@
 .container {
   text-align: center;
   margin-top: 3.125rem;
+  padding: 1.25rem 1.25rem;
 }
 
 .button {
   padding: 0.625rem 1.25rem;
   font-size: 1rem;
   background-color: #4caf50;
-  color: white;
+  color: #f8f8f8;
   border: none;
   border-radius: 0.3125rem;
   cursor: pointer;
@@ -60,7 +61,7 @@
 
 .numberDisplay {
   text-align: center;
-  color: white;
+  color: #f8f8f8;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,11 +110,12 @@ th, td {
 
 th {
   background-color: #4caf50;
-  color: white;
+  color: #f8f8f8;
 }
 
 td {
   background-color: #f9f9f9;
+  color: #333;
 }
 
 td:first-child, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:last-child {
