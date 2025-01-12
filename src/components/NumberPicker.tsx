@@ -93,13 +93,32 @@ export function NumberPicker() {
             </tr>
           </thead>
           <tbody>
-            {/* Preenche as linhas da tabela com os números sorteados */}
             <tr>
-              <td>{drawnNumbers.B.join(', ')}</td>
-              <td>{drawnNumbers.I.join(', ')}</td>
-              <td>{drawnNumbers.N.join(', ')}</td>
-              <td>{drawnNumbers.G.join(', ')}</td>
-              <td>{drawnNumbers.O.join(', ')}</td>
+              <td>
+                {drawnNumbers.B.map((num, index) => (
+                  <div key={index}>{num}</div>
+                ))}
+              </td>
+              <td>
+                {drawnNumbers.I.map((num, index) => (
+                  <div key={index}>{num}</div>
+                ))}
+              </td>
+              <td>
+                {drawnNumbers.N.map((num, index) => (
+                  <div key={index}>{num}</div>
+                ))}
+              </td>
+              <td>
+                {drawnNumbers.G.map((num, index) => (
+                  <div key={index}>{num}</div>
+                ))}
+              </td>
+              <td>
+                {drawnNumbers.O.map((num, index) => (
+                  <div key={index}>{num}</div>
+                ))}
+              </td>
             </tr>
           </tbody>
         </table>
