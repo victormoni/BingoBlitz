@@ -1,15 +1,15 @@
 .container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 
 .button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
   background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
 }
 
@@ -18,22 +18,22 @@
 }
 
 .roulette {
-  margin: 20px auto;
-  width: 200px; /* Tamanho da bola de bingo */
-  height: 200px; /* Tamanho da bola de bingo */
-  border-radius: 50%; /* Faz a roleta redonda */
+  margin: 1.25rem auto;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #ffcc00; /* Cor de fundo da bola de bingo */
-  border: 5px solid #333; /* Borda arredondada para a bola */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
-  transition: transform 0.5s ease-out; /* Transição suave quando parar */
+  background-color: #ffcc00;
+  border: 0.3125rem solid #333;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease-out;
 }
 
 .spinning {
-  animation: spin 1s linear; /* Gira rapidamente em 1 segundo */
+  animation: spin 1s linear;
 }
 
 @keyframes spin {
@@ -41,55 +41,55 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(1440deg); /* Gira 4 vezes (1440 graus) */
+    transform: rotate(1440deg);
   }
 }
 
 .blackBall {
-  width: 140px; /* Tamanho da bola preta */
-  height: 140px; /* Tamanho da bola preta */
-  border-radius: 50%; /* Faz a bola preta ser redonda */
-  background-color: #333; /* Cor preta */
+  width: 8.75rem;
+  height: 8.75rem;
+  border-radius: 50%;
+  background-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute; /* Fica dentro da bola de bingo amarela */
-  z-index: 2; /* Garante que a bola preta fique por cima da bola de bingo */
-  flex-direction: column; /* Organiza os itens (letra e número) em coluna */
+  position: absolute;
+  z-index: 2;
+  flex-direction: column;
 }
 
 .numberDisplay {
   text-align: center;
   color: white;
   display: flex;
-  flex-direction: column; /* Coloca a letra e o número em uma coluna */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .letter {
-  font-size: 30px; /* Tamanho da letra */
+  font-size: 1.875rem;
   font-weight: bold;
-  margin-bottom: 5px; /* Espaçamento entre a letra e o número */
+  margin-bottom: 0.3125rem;
 }
 
 .number {
-  font-size: 40px; /* Tamanho do número */
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 .questionMark {
-  font-size: 50px;
+  font-size: 3.125rem;
 }
 
 .number {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #f8f8f8;
 }
 
 .table {
-  margin-top: 30px;
+  margin-top: 1.875rem;
   width: 100%;
   text-align: center;
 }
@@ -101,10 +101,10 @@ table {
 }
 
 th, td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
+  padding: 0.75rem 0.9375rem;
+  border: 0.0625rem solid #ddd;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 th {
