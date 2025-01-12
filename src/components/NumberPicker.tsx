@@ -70,14 +70,15 @@ export function NumberPicker() {
 
   return (
     <div className={styles.container}>
-      <button onClick={sortNumber} className={styles.button}>
-        Sortear Número
-      </button>
-
       {/* Botão de Resetar Jogo */}
       <button onClick={resetGame} className={styles.resetButton}>
         Resetar Jogo
       </button>
+      
+      <button onClick={sortNumber} className={styles.button}>
+        Sortear Número
+      </button>
+
 
       {/* Animação da roleta */}
       <div className={`${styles.roulette} ${isSpinning ? styles.spinning : ''}`}>

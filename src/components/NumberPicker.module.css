@@ -155,3 +155,32 @@ td:first-child, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:last-child
 .resetButton:hover {
   background-color: #ff7f00;
 }
+
+/* Responsividade - Ajustes para botões */
+@media (max-width: 768px) {
+  .button, .resetButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  .resetButton {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button, .resetButton {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .resetButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
