@@ -2,8 +2,6 @@
 
 Bem-vindo ao Bingo Game! Este é um projeto simples e divertido que simula um jogo de bingo. Com ele, você pode sortear números aleatórios, visualizar os números sorteados em uma tabela e até mesmo resetar o jogo para começar de novo. Abaixo, você encontrará instruções sobre como configurar o projeto, como utilizá-lo e algumas informações adicionais.
 
-Link do site: https://bingo-game-ten.vercel.app/
-
 ## 🛠️ Como Configurar o Projeto
 
 ### Pré-requisitos
