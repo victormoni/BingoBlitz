@@ -70,8 +70,3 @@ Para construir o projeto para produção, utilize o comando:
 npm run build
 
 ```
-
-
-Email: seu-email@exemplo.com
-GitHub: seu-usuario
-Aproveite o jogo e divirta-se! 🎉
